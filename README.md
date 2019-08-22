@@ -21,8 +21,9 @@ Ansible variables, along with the default values (see `default/main.yml`) :
     nexus_timezone: 'UTC'
     nexus_package: "nexus-{{ nexus_version }}-unix.tar.gz"
     nexus_download_source: "http://download.sonatype.com/nexus/3"
+    nexus_script_api_root: 'service/siesta/rest/v1/script/'
 
-The nexus version and package to install, see available versions at https://www.sonatype.com/download-oss-sonatype . `nexus_timezone` is a Java Timezone name and can be useful in combination with `nexus_scheduled_tasks` cron expressions below. `nexus_download_source` is the source for the Nexus tarball download and supports different protocols specified by the [get_url](https://docs.ansible.com/ansible/latest/modules/get_url_module.html) documentation (i.e. HTTP, HTTPS, FTP, or file).
+The nexus version and package to install, see available versions at https://www.sonatype.com/download-oss-sonatype . `nexus_timezone` is a Java Timezone name and can be useful in combination with `nexus_scheduled_tasks` cron expressions below. `nexus_download_source` is the source for the Nexus tarball download and supports different protocols specified by the [get_url](https://docs.ansible.com/ansible/latest/modules/get_url_module.html) documentation (i.e. HTTP, HTTPS, FTP, or file). `nexus_script_api_root` changed from the siesta root to a `/service/rest/v1` as of [NEXUS-14940](https://issues.sonatype.org/browse/NEXUS-14940); thefore, please use the appropriate script API root for the intended `nexus_version`. 
 
     nexus_download_dir: '/tmp'
 

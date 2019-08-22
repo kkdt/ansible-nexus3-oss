@@ -1,6 +1,7 @@
 ---
 nexus_version: '3.3.1-01'
 nexus_download_source: 'http://download.sonatype.com/nexus/3'
+nexus_script_api_root: 'service/siesta/rest/v1/script/'
 nexus_package: "nexus-{{ nexus_version }}-unix.tar.gz"
 nexus_download_dir: '/tmp'
 nexus_backup_dir: '/var/nexus-backup'
